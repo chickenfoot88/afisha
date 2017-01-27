@@ -182,7 +182,7 @@ h3, h4, h5, h6
 	margin-right: -30px
 	ul
 		text-align: center
-		&	.active
+		&.active
 			background-color: darken($accent-color, 10%)
 		li
 			display: inline-block
@@ -194,7 +194,7 @@ h3, h4, h5, h6
 			&:hover
 				background-color: #fff
 				color: $accent-color
-.top-content
+.all-entertainments
 	padding-top: 10px
 	.slider-wrap
 		.slider-nav-container
@@ -271,6 +271,7 @@ h3, h4, h5, h6
 				position: relative
 				z-index: 1
 
+//Блок новостных ссылок справ от слайд-шоу
 .articles-box
 	.article-preview-small
 		width: 100px
@@ -296,6 +297,7 @@ h3, h4, h5, h6
 			margin-top: 0
 			text-decoration: none
 
+//Блок-ссылка справа от новостных ссылок
 .side-info-box
 	height: 360px
 	overflow: hidden
@@ -319,9 +321,35 @@ h3, h4, h5, h6
 			font-size: em(26px)
 			padding: 5px 15px
 			z-index: 1
-
 	img
 		height: 100%
 		margin-right: 10px
+
+//Блок Календар развлечений
+.calendar-of-events
+	.events-date-menu
+		margin-bottom: 10px
+		li
+			display: inline-block
+			margin-left: 0
+			margin-right: 10px
+			a
+				background-color: $accent-color
+				color: #fff
+				display: block
+				font-family: "Arial", sans-serif
+				font-size: em(16px)
+				line-height: 1
+				padding: 15px 26px
+				text-transform: uppercase
+				text-decoration: none
+				&.active
+					background-color: darken($accent-color, 10%)
+				&:hover
+					background-color: darken($accent-color, 10%)
+				.fa
+					font-size: 20px
+					margin-right: 10px
+					line-height: 0
 
 @import "media" // Всегда в конце
