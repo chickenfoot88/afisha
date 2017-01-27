@@ -61,6 +61,23 @@ h1, h2
 h3, h4, h5, h6
 	color: $text-headers-color
 
+
+.button
+	background-color: $accent-color
+	color: #fff
+	font-size: em(16px)
+	padding: 12px 27px
+	text-decoration: none
+	text-transform: uppercase
+	z-index: 1
+	margin-top: 15px
+	display: inline-block
+	&:hover
+		text-decoration: none
+		color: #fff
+		background-color: darken($accent-color, 15%)
+		ttu
+
 .section-header
 	color: $text-main-color
 	display: block
@@ -393,9 +410,24 @@ h3, h4, h5, h6
 			z-index: 1
 			margin-right: -1px
 
-.tab_item
+.evet_section
+	padding: 24px 15px
+	background-color: $main-color
 	display: none
 	&:first-child
 		display: block
+	.event_item
+		padding: 0 15px 20px 15px
+		border-bottom: 1px solid darken($main-color, 15%)
+		margin-bottom: 15px
+		.event-item-img
+			img
+				width: 100%
+		h3
+			margin-top: 0
+			line-height: 1.2
+			font-size: em(18px)
+		p
+			color: $text-main-color
 
 @import "media" // Всегда в конце
