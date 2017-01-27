@@ -34,7 +34,7 @@ body
 	font-size: $default-font-size
 	min-width: 320px
 	position: relative
-	line-height: 1.75
+	line-height: 1.5
 	font-family: $default-font
 	overflow-x: hidden
 
@@ -243,10 +243,8 @@ h3, h4, h5, h6
 		h2
 			color: #FFF
 			font-size: em(18px)
-			position:
-			left: 100px
 			opacity: 0
-			transition: all 1s ease
+			transition: all 1.5s ease
 		span
 			font-size: em(10px)
 		&.active
@@ -272,5 +270,30 @@ h3, h4, h5, h6
 				padding-top: 220px
 				position: relative
 				z-index: 1
+
+.articles-box
+	.article-preview-small
+		width: 100px
+		height: 160px
+		line-height: 1.2
+		margin-bottom: 40px
+		position: relative
+		font-size: em(16px)
+		&:hover
+			.article-preview-small-header
+				text-decoration: underline
+		a
+			text-decoration: none
+		img
+			margin-bottom: 13px
+			width: 100%
+		&-header
+			color: $text-main-color
+			text-decoration: none
+		&-date
+			color: $text-date-color
+			font-size: em(14px)
+			margin-top: 0
+			text-decoration: none
 
 @import "media" // Всегда в конце

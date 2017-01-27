@@ -42,11 +42,15 @@ $(function() {
 //Слайд-шоу
   var owl = $(".slider");
    owl.owlCarousel({
-     loop: true,
-     items: 1,
-     itemClass: "slide-wrap",
-     navText: ""
-   });
+    loop: true,
+    items: 1,
+    itemClass: "slide-wrap",
+    navText: "",
+    autoplay: true,
+    autoplayTimeout: 10000,
+    smartSpeed: 1000
+  });
+  
    $(".next").click(function() {
      owl.trigger('next.owl.carousel');
    })
