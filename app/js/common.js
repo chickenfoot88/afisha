@@ -62,7 +62,9 @@ $(function() {
 // Табы
   $(".tabs-wrapper .tab").click(function() {
   	$(".tabs-wrapper .tab").removeClass("active").eq($(this).index()).addClass("active");
-  	$(".tab_item").hide().eq($(this).index()).fadeIn()
+  	$(".event-section").hide().eq($(this).index()).fadeIn();
+    $(this).prev().children().addClass("br-none");
+    $(".tabs-wrapper .tab.active").prev().siblings().children().removeClass("br-none");
   }).eq(0).addClass("active");
 
 

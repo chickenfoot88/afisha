@@ -370,67 +370,60 @@ h3, h4, h5, h6
 					line-height: 0
 
 
+
+
+.br-none
+	border-right: none !important
 //Табы
 .tabs-wrapper
+	.tab-content
+		background-color: $main-color
 	.tabs
 		ul
 			font-size: 0
-			li:first-child
-				margin-left: 0
-				margin-right: 0
-				span
-					margin-left: 1px
-				&:hover
-					margin-right: 0
-			li:last-child
-				span
-					border-right: 1px solid transparent
-				&.active, &:hover
-					border-right: 1px solid $main-color
-		.tab
-			font-weight: bold
-			cursor: pointer
-			text-transform: uppercase
-			display: inline-block
-			width: 20%
-			font-size: 14px
-			padding: 20px 0
-			&:hover
-				background-color: $main-color
-				margin-left: -1px
-				margin-right: 1px
-				span
-					color: #000
-					border-right: 1px solid transparent
-					margin-left: 1px
-			&.active
-				background-color: $main-color
-				margin-left: -1px
-				margin-right: 1px
-				span
-					color: #000
-					border-right: 1px solid transparent
-					z-index: 2
-					margin-left: 1px
-				&:hover
-					margin-right: 1px
+			li.tab
+				font-weight: bold
+				cursor: pointer
+				text-transform: uppercase
+				display: inline-block
+				width: 20%
+				font-size: 14px
+				padding: 20px 0
+				&:last-child
 					span
 						border-right: 1px solid transparent
-						margin-left: 1px
-			span
-				font-size: em(14px)
-				display: block
-				text-align: center
-				color: $text-main-color
-				line-height: 2
-				width: 100%
-				border-right: 1px solid darken($main-color, 10%)
-				z-index: 1
+				&:last-child
+					margin: 0
+					span
+					&.active, &:hover
+						border-right: 1px solid $main-color
+				&:hover
+					background-color: $main-color
+					span
+						color: #000
+				&.active
+					background-color: $main-color
+					span
+						color: #000
+						border-right: 1px solid transparent
+						z-index: 2
+					&:hover
+						span
 
-.evet-section
+				span
+					font-size: em(14px)
+					display: block
+					text-align: center
+					color: $text-main-color
+					line-height: 2
+					width: 100%
+					border-right: 1px solid darken($main-color, 10%)
+					z-index: 1
+
+.event-section
 	padding: 24px 15px
-	background-color: $main-color
 	display: none
+	height: 1000px
 	&:first-child
 		display: block
 	.event-item
