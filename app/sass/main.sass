@@ -59,7 +59,7 @@ h1, h2
 	color: $text-main-color
 
 h3, h4, h5, h6
-	color: $text-headers-color
+	color: $text-accent-color
 
 
 .button
@@ -108,7 +108,7 @@ h3, h4, h5, h6
 	padding: 30px 0 0
 	width: 1030px
 	h2
-		color: $text-headers-color
+		color: $text-accent-color
 		font-size: em(30px)
 		line-height: 1.1
 		margin: 0
@@ -374,6 +374,7 @@ h3, h4, h5, h6
 
 .br-none
 	border-right: none !important
+	padding-right: 1px
 //Табы
 .tabs-wrapper
 	.tab-content
@@ -448,7 +449,6 @@ h3, h4, h5, h6
 .event-section
 	padding: 24px 15px
 	display: none
-	height: 1000px
 	&:first-child
 		display: block
 	.event-item
@@ -464,5 +464,16 @@ h3, h4, h5, h6
 			font-size: em(18px)
 		p
 			color: $text-main-color
-
+		.event-date
+			color: #000
+			font-size: em(14px)
+			font-weight: bold
+			span
+				font-weight: normal
+		.event-price
+			color: $accent-color
+			font-size: em(22px)
+			font-weight: bold
+			margin-bottom: 0
+			line-height: 1.1
 @import "media" // Всегда в конце
