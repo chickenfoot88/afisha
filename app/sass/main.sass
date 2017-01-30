@@ -392,23 +392,48 @@ h3, h4, h5, h6
 				&:last-child
 					span
 						border-right: 1px solid transparent
+				// &:first-child
+				// 	margin: 0
+				// 	&:hover
+				// 		margin: 0
+				// 		span
+				// 			margin: 0
+				// 	&.active
+				// 		margin: 0
+				// 		span
+				// 			margin: 0
+				// 		&:hover
+				// 			margin: 0
+				// 			span
+				// 				margin: 0
 				&:last-child
 					margin: 0
 					span
+						// border-right: 1px solid transparent
 					&.active, &:hover
 						border-right: 1px solid $main-color
 				&:hover
 					background-color: $main-color
+					// margin-left: -1px
+					// margin-right: 1px
 					span
 						color: #000
+						// border-right: 1px solid transparent
+						// margin-left: 1px
 				&.active
 					background-color: $main-color
+					// margin-left: -1px
+					// margin-right: 1px
 					span
 						color: #000
 						border-right: 1px solid transparent
 						z-index: 2
+						// margin-left: 1px
 					&:hover
+						// margin-right: 1px
 						span
+							// border-right: 1px solid transparent
+							// margin-left: 1px
 
 				span
 					font-size: em(14px)
