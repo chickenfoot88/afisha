@@ -73,6 +73,13 @@ $(function() {
   	$(".city-сhronicle .article-section").hide().eq($(this).index()).fadeIn();
   }).eq(0).addClass("active");
 
+  //Табы в видеоблоге
+  $(".vlog .tab").click(function() {
+    $(".vlog .tab").removeClass("active").eq($(this).index()).addClass("active");
+    $(".vlog .vlog-section").hide().eq($(this).index()).fadeIn();
+  }).eq(0).addClass("active");
+
+
     // Убираем бордер у таба при переключении
   $(".tabs-wrapper .tab").click(function() {
     $(this).prev().children().addClass("br-none");
