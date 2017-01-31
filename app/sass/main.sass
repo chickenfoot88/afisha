@@ -371,9 +371,6 @@ h3, h4, h5, h6
 					margin-right: 10px
 					line-height: 0
 
-
-
-
 .br-none
 	border-right: none !important
 	padding-right: 1px
@@ -392,6 +389,7 @@ h3, h4, h5, h6
 				width: 20%
 				font-size: 14px
 				padding: 20px 0
+				transition: background-color .2s ease
 				&:last-child
 					span
 						border-right: 1px solid transparent
@@ -416,15 +414,16 @@ h3, h4, h5, h6
 					border-right: 1px solid darken($main-color, 10%)
 					z-index: 1
 
-.event-section
+.events-theme-tabs
+	margin-bottom: px
+.event-section, .article-section
 	padding: 24px 15px
 	display: none
 	background-color: $main-color
-	min-height: 1000px
-	margin-bottom: 40px
+	margin-bottom: 27px
 	&:first-child
 		display: block
-	.event-item
+	.event-item, .article-item
 		padding: 0 15px 20px 15px
 		border-bottom: 1px solid darken($main-color, 15%)
 		margin-bottom: 15px
@@ -492,6 +491,8 @@ h3, h4, h5, h6
 		&:hover
 			span
 				opacity: 1
+		&:last-child
+			margin-bottom: 0
 
 	a
 		background-color: rgba(10, 10, 10, 0)
@@ -520,5 +521,52 @@ h3, h4, h5, h6
 				background-color: darken($accent-color, 15%)
 	img
 		width: 100%
+
+.city-сhronicle
+	.article-section-left, .article-section-right
+		width: 50%
+	.article-section-left
+		float: left
+	.article-section-right
+		float: right
+		padding-left: 30px
+	.tabs-wrapper
+		.tabs
+			ul
+				.tab
+					width: 13%
+	.article-item
+		padding: 0 0 20px 0
+		&:last-child
+			border-bottom: none
+			margin-bottom: 0
+			padding-bottom: 0
+		.article-img
+			width: 115px
+			float: left
+			img
+				width: 100%
+		.article-text
+			float: left
+			margin-left: 30px
+			max-width: 295px
+			color: $text-main-color
+			p
+				font-size: em(16px)
+				line-height: 1.1
+				margin-bottom: 0
+			.article-date
+				margin-top: 4px
+				color: $text-date-color
+			a
+				text-decoration: none
+				color: $text-accent-color
+				&:hover
+					text-decoration: underline
+
+	.article-big-preview
+		img
+			width: 100%
+
 
 @import "media" // Всегда в конце
