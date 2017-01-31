@@ -67,5 +67,17 @@ $(function() {
     $(".tabs-wrapper .tab.active").prev().siblings().children().removeClass("br-none");
   }).eq(0).addClass("active");
 
+  $(".tabs-wrapper .tab").mouseover(function() {
+    if (!($(this).hasClass("active"))) {
+      $(this).prev().children().addClass("br-none");
+    }
+  });
+
+  $(".tabs-wrapper .tab").mouseleave(function functionName() {
+    if (!($(this).hasClass("active"))) {
+      $(this).prev().children().removeClass("br-none");
+    }
+  });
+
 
 });
