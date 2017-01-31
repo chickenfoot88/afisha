@@ -529,7 +529,27 @@ h3, h4, h5, h6
 		float: left
 	.article-section-right
 		float: right
+		text-align: center
 		padding-left: 30px
+		.article-big-preview
+			position: relative
+			.article-text
+				background-color: rgba(0, 0, 0, .4)
+				bottom: 0
+				color: #fff
+				padding: 5px 50px 24px  24px
+				position: absolute
+				text-align: left
+				line-height: 1.2
+				a
+					color: #fff
+					text-decoration: none
+					font-size: em(18px)
+					&:hover
+						text-decoration: underline
+				p
+					margin-bottom: 0
+					margin-top: 5px
 	.tabs-wrapper
 		.tabs
 			ul
@@ -567,6 +587,7 @@ h3, h4, h5, h6
 	.article-big-preview
 		img
 			width: 100%
-
+	.all-news-btn
+		margin-top: 25px
 
 @import "media" // Всегда в конце
