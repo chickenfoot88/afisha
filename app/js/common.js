@@ -58,6 +58,35 @@ $(function() {
      owl.trigger('prev.owl.carousel');
    })
 
+//Слайды для youtube блока
+
+  var owl = $(".youtube-slider");
+   owl.owlCarousel({
+     items:1,
+     loop:false,
+     center:true,
+     margin:10,
+     itemClass: "youtube-slide-wrap",
+     URLhashListener:true,
+     autoplayHoverPause:true,
+     startPosition: 'URLHash',
+     animateIn: 'fadeIn',
+     animateOut: 'fadeOut',
+     mouseDrag: false,
+     dots: false,
+     navText: ""
+  });
+
+//Меню для youtube блока
+
+  var owl = $(".youtube-menu");
+   owl.owlCarousel({
+    loop: false,
+    items: 4,
+    itemClass: "youtube-menu-slide-wrap",
+    navText: "",
+    rewind: true
+  });
 
 // Табы
 
