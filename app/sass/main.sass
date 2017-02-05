@@ -632,6 +632,12 @@ footer
 	width: 100%
 	background-color: #000
 	color: #fff
+	a
+		color: #fff
+		&:hover
+			color: #fff
+	.sign-up-header
+		width: 300px
 	.wrapper
 		background-color: #000
 		padding-top: 20px
@@ -654,11 +660,22 @@ footer
 		padding-right: 50px
 		padding-left: 50px
 
+	.footer-contacts
+		margin-bottom: 55px
 	ul
+		margin-top: 20px
+	.footer-links, .footer-phones
 		color: #bebebe
 		float: left
-		margin-right: 30px
-		&:last-child
-			float: right
-			margin: 0
+		margin-right: 70px
+	.footer-mail
+		float: right
+		margin-right: 0
+
+	.metrics
+		ul
+			li
+				display: inline-block
+				margin-right: 3px
+
 @import "media" // Всегда в конце
