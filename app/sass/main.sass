@@ -632,6 +632,9 @@ footer
 	width: 100%
 	background-color: #000
 	color: #fff
+	.wrapper
+		padding-right: 0
+		padding-left: 0
 	a
 		color: #fff
 		&:hover
@@ -668,14 +671,40 @@ footer
 		color: #bebebe
 		float: left
 		margin-right: 70px
+	.footer-feedback-rules
+		a
+			margin-right: 60px
 	.footer-mail
 		float: right
 		margin-right: 0
 
-	.metrics
+	.counters
+		float: left
 		ul
 			li
 				display: inline-block
 				margin-right: 3px
 
+	.footer-logo
+		position: relative
+		margin-top: 20px
+		margin-left: 40px
+		float: left
+		img
+			width: 100px
+		span
+			display: block
+			font-size: em(13px)
+			left: 120px
+			line-height: 1.5
+			position: absolute
+			top: 0
+			width: 120px
+
+	.facebook-frame, .vk-frame
+		float: left
+		margin-left: 30px
+	.footer-copyright
+		padding-left: 40px
+		padding-top: 38px
 @import "media" // Всегда в конце
