@@ -128,6 +128,12 @@ $(function() {
     }
   });
 
+  //Ссылки на статьи в проевьюшках
+
+  $(".article-item").click(function(){
+       window.location=$(this).children(".article-text").children("h3").find("a").attr("href"); return false;
+   });
+
 
 
 });
