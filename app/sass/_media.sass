@@ -5,23 +5,37 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
-
-  .wrapper
-    width: 830px
+  /**/
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
-	/**/
 
+  .page-header,
+  .wrapper
+    width: 100%
+    h2
+      padding-right: 30px
+
+  .top-panel
+    .search-field
+      input
+        max-width: 200px
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
-	/**/
 
+  .top-panel
+    .search-field
+      input
+        display: none
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
-	/**/
+
+  .page-header
+    display: none
+  .top-bunner
+    background-color: $social-color
 
 
 /* Custom, iPhone Retina */

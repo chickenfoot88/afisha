@@ -38,7 +38,6 @@ body
 	font-family: $default-font
 	overflow-x: hidden
 
-
 .img-responsive
 	display: block
 	max-width: 100%
@@ -85,29 +84,26 @@ h3, h4, h5, h6
 	margin: 10px 0
 
 //Баннер в топе страницы
-.banner
+.top-banner
 	background-color: #fff
 	font-size: em(30px)
 	text-align: center
 	padding: 15px 0
 	height: 80px
-	margin-bottom: 100px
 
 .wrapper
 	background-color: #fff
-	width: 1030px
+	max-width: 1030px
 	margin: 0 auto
 	padding: 0 30px 25px 30px
 
 
 .page-header
-	background-image: url(../img/header-bg.png)
-	background-position: 35px -15px
-	background-size: cover
-	height: 120px
+	background: url(../img/header_bg.png) 30px 70px no-repeat
+	height: 220px
 	margin: 0 auto
-	padding: 30px 0 0
-	width: 1030px
+	padding: 130px 0 0
+	max-width: 1030px
 	h2
 		color: $text-accent-color
 		font-size: em(30px)
@@ -122,9 +118,9 @@ h3, h4, h5, h6
 	background-color: $accent-color
 	color: #fff
 	font-size: em(18px)
-	height: 40px
+	height: 42px
 	max-width: 220px
-	padding: 7px 15px
+	padding: 11px 15px
 	position: relative
 	text-transform: uppercase
 	z-index: 2
@@ -161,35 +157,41 @@ h3, h4, h5, h6
 	padding-top: 27px
 	height: 95px
 	.search-field
+		background-color: #fff
 		border: 1px solid darken($main-color, 10%)
 		color: $text-main-color
-		float: left
+		float: right
 		padding-right: 8px
-		width: 300px
+		position: relative
+		margin-left: 10px
+		min-width: 45px
+		min-height: 42px
 		input
 			border: none
+			color: lighten($text-accent-color, 55%)
 			height: 40px
-			padding: 10px 15px
-			width: 90%
+			padding: 10px 30px 10px 15px
+			width: 260px
 			&::placeholder
 				color: #dad9d9
 		i
 			color: $accent-color
 			cursor: pointer
-			font-size: em(22px)
-
-//Кнопка авторизации
-.top-panel
+			font-size: em(30px)
+			position: absolute
+			right: 10px
+			top: 6px
 	.auth
 		border: 1px solid darken($main-color, 10%)
 		color: $accent-color
 		cursor: pointer
 		float: right
 		font-size: em(24px)
-		height: 40px
-		padding-top: 2px
+		height: 42px
+		padding-top: 4px
 		text-align: center
 		width: 45px
+		margin-left: 10px
 
 //Главное меню
 .top-menu
