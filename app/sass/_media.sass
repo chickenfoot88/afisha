@@ -16,31 +16,45 @@
     h2
       padding-right: 30px
 
-  .top-panel
-    .search-field
-      input
-        max-width: 200px
+  // .top-panel
+  //   .search-field
+  //     input
+  //       max-width: 200px
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
 
   .top-panel
-    .search-field
-      input
-        display: none
+    margin-bottom: 20px
+    .cities-choosen
+      margin-right: 30px
+
+  .wrapper
+    padding: 0 15px
+  .logo-container
+    text-align: center
+    margin-bottom: 25px
+
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
 
   .page-header
     display: none
-  .top-bunner
-    background-color: $social-color
 
+  .top-panel
+    .cities-choosen
+      margin: 0
+    .search-field
+      input
+        width: 170px
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
-	/**/
+
+  .search-field
+    input
+      display: none
 
 
 /*==========  Mobile First  ==========*/
