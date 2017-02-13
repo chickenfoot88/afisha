@@ -20,6 +20,7 @@ gulp.task('scripts', function() {
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/libs/jquery.custom-scroll/dist/jquery.custom-scroll.js',
 		'app/libs/owl.carousel/dist/owl.carousel.min.js',
+		'app/libs/jQuery.mmenu/dist/js/jquery.mmenu.all.min.js',
 		'app/js/common.js', // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))

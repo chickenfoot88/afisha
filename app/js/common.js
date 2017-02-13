@@ -31,13 +31,29 @@ $(function() {
      }
    })
 
-
 //Изменение ширины кнопки выбора города
    function setBtnWidth() {
      $(".cities-choosen").css('width', function() {
        return parseInt($(".cities-choosen span").css('width')) + 50 + "px";
      });
    };
+
+ //Меню для мобильных
+
+  $("#my-menu").mmenu({
+    extensions: ["widescreen", "effect-menu-slide"]
+  });
+
+//Кнопка переключения меню на мобильных
+  $(".toggle-menu").click(function() {
+    var myMenu = $("#my-menu").data( "mmenu");
+    myMenu.open();
+    var toogleMnuSpans = $(this).children(".toggle-menu-spans");
+    toogleMnuSpans.toggleClass("on");
+    return false;
+  });
+
+
 
 //Слайд-шоу
   var owl = $(".slider");
@@ -56,10 +72,10 @@ $(function() {
    })
    $(".prev").click(function() {
      owl.trigger('prev.owl.carousel');
-   })
+   });
+
 
 //Слайды для youtube блока
-
   var owl = $(".youtube-slider");
    owl.owlCarousel({
      items:1,
