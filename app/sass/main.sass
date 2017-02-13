@@ -38,7 +38,6 @@ body
 	font-family: $default-font
 	overflow-x: hidden
 
-
 .img-responsive
 	display: block
 	max-width: 100%
@@ -85,29 +84,26 @@ h3, h4, h5, h6
 	margin: 10px 0
 
 //Баннер в топе страницы
-.banner
-	background-color: #fff
+.top-banner
+	background-color: #e1e1e1
 	font-size: em(30px)
 	text-align: center
 	padding: 15px 0
 	height: 80px
-	margin-bottom: 100px
 
 .wrapper
 	background-color: #fff
-	width: 1030px
+	max-width: 1030px
 	margin: 0 auto
 	padding: 0 30px 25px 30px
 
 
 .page-header
-	background-image: url(../img/header-bg.png)
-	background-position: 35px -15px
-	background-size: cover
-	height: 120px
+	background: url(../img/header_bg.png) 30px 70px no-repeat
+	height: 220px
 	margin: 0 auto
-	padding: 30px 0 0
-	width: 1030px
+	padding: 130px 0 0
+	max-width: 1030px
 	h2
 		color: $text-accent-color
 		font-size: em(30px)
@@ -122,9 +118,9 @@ h3, h4, h5, h6
 	background-color: $accent-color
 	color: #fff
 	font-size: em(18px)
-	height: 40px
+	height: 42px
 	max-width: 220px
-	padding: 7px 15px
+	padding: 11px 15px
 	position: relative
 	text-transform: uppercase
 	z-index: 2
@@ -154,52 +150,95 @@ h3, h4, h5, h6
 		position: absolute
 		top: 0
 		right: 0
-		padding: 7px 15px 0 0
+		padding: 10px 13px 0 0
 
 //Поле для поиска
 .top-panel
 	padding-top: 27px
-	height: 95px
+	min-height: 95px
+
 	.search-field
+		background-color: #fff
 		border: 1px solid darken($main-color, 10%)
 		color: $text-main-color
-		float: left
+		float: right
 		padding-right: 8px
-		width: 300px
+		position: relative
+		margin-left: 10px
+		min-height: 42px
+		cursor: pointer
+		max-width: 260px
+		width: 70%
+
 		input
 			border: none
+			color: lighten($text-accent-color, 55%)
 			height: 40px
-			padding: 10px 15px
-			width: 90%
+			padding: 10px 30px 10px 15px
+			width: 100%
 			&::placeholder
 				color: #dad9d9
+
 		i
 			color: $accent-color
-			cursor: pointer
-			font-size: em(22px)
+			font-size: em(30px)
+			position: absolute
+			right: 10px
+			top: 6px
 
-//Кнопка авторизации
-.top-panel
 	.auth
 		border: 1px solid darken($main-color, 10%)
 		color: $accent-color
 		cursor: pointer
 		float: right
 		font-size: em(24px)
-		height: 40px
-		padding-top: 2px
+		height: 42px
+		padding-top: 4px
 		text-align: center
 		width: 45px
+		margin-left: 10px
 
 //Главное меню
 .top-menu
 	background-color: $accent-color
 	color: #fff
-	letter-spacing: -.36em
 	margin-left: -30px
 	margin-right: -30px
+	letter-spacing: -5px
+
+	&-mobile
+		font-size: em(16px)
+		font-weight: bold
+		letter-spacing: normal
+		text-transform: uppercase
+		cursor: pointer
+
+		.ticket-buy-btn,
+		.toggle-menu
+			color: #fff
+			display: block
+			height: 40px
+			text-decoration: none
+			&:hover
+				background-color: darken($accent-color, 15%)
+		.ticket-buy-btn
+			margin: 0 -15px 0 0
+			padding: 10px 0 0 25px
+		.toggle-menu
+			margin: 0 0 0 -15px
+			padding: 10px 25px 0 0
+			text-align: center
+			&::before
+				content: ""
+				position: absolute
+				height: 20px
+				width: 1px
+				background-color: lighten($accent-color, 10%)
+				left: -1px
+
 	ul
 		text-align: center
+		padding: 0 15px
 		&.active
 			background-color: darken($accent-color, 10%)
 		li
@@ -215,7 +254,7 @@ h3, h4, h5, h6
 .all-entertainments
 	padding-top: 10px
 	.slider-wrap
-.slider-nav-container
+.main-slider-nav-container
 	position: relative
 .slider-nav
 	color: #fff
@@ -238,6 +277,33 @@ h3, h4, h5, h6
 		&:last-child
 			right: 20px
 
+//Кнопка переключения меню
+.toggle-menu-spans
+	display: block
+	width: 28px
+	height: 28px
+	float: right
+	span:after, span:before
+		content: ""
+		position: absolute
+		left: 0
+		top: 9px
+	span:after
+		top: 18px
+	span
+		position: relative
+		display: block
+	span, span:after, span:before
+		width: 100%
+		height: 3px
+		background-color: #fff
+		transition: all 0.3s
+		backface-visibility: hidden
+		border-radius: 2px
+
+
+
+//Слайд шоу
 .slider
 	overflow: hidden
 	.owl-dots
@@ -251,7 +317,7 @@ h3, h4, h5, h6
 			border-radius: 10em
 			display: inline-block
 			height: 8px
-			margin: 0 2px
+			margin: 0 5px
 			transition: background-color .25s ease
 			width: 8px
 			&.active
@@ -262,7 +328,7 @@ h3, h4, h5, h6
 			color: #FFF
 			font-size: em(18px)
 			opacity: 0
-			transition: all 1.5s ease
+			transition: all 3s ease
 		span
 			font-size: em(10px)
 		&.active
@@ -291,6 +357,7 @@ h3, h4, h5, h6
 
 //Блок новостных ссылок справ от слайд-шоу
 .articles-box
+	padding-left: 20px
 	.article-preview-small
 		width: 100px
 		height: 160px
@@ -600,7 +667,7 @@ h3, h4, h5, h6
 				width: 13%
 	&-section
 		margin-bottom: 0
-	.slider-nav-container
+	.main-slider-nav-container
 		margin: 0 auto
 		width: 640px
 		.slider-nav

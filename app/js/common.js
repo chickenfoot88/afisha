@@ -31,7 +31,6 @@ $(function() {
      }
    })
 
-
 //Изменение ширины кнопки выбора города
    function setBtnWidth() {
      $(".cities-choosen").css('width', function() {
@@ -39,9 +38,24 @@ $(function() {
      });
    };
 
+ //Меню для мобильных
+
+  $("#my-menu").mmenu({
+    extensions: ["widescreen", "effect-menu-slide"]
+  });
+
+//Кнопка переключения меню на мобильных
+  $(".toggle-menu").click(function() {
+    var myMenu = $("#my-menu").data( "mmenu");
+    myMenu.open();
+    return false;
+  });
+
+
+
 //Слайд-шоу
-  var owl = $(".slider");
-   owl.owlCarousel({
+  var owlMain = $(".slider");
+   owlMain.owlCarousel({
     loop: true,
     items: 1,
     itemClass: "slide-wrap",
@@ -51,17 +65,19 @@ $(function() {
     smartSpeed: 1000
   });
 
-   $(".next").click(function() {
-     owl.trigger('next.owl.carousel');
+  var mainSliderNav = $(".main-slider-nav-container");
+
+   mainSliderNav.find(".next").click(function() {
+     owlMain.trigger('next.owl.carousel');
    })
-   $(".prev").click(function() {
-     owl.trigger('prev.owl.carousel');
-   })
+   mainSliderNav.find(".prev").click(function() {
+     owlMain.trigger('prev.owl.carousel');
+   });
+
 
 //Слайды для youtube блока
-
-  var owl = $(".youtube-slider");
-   owl.owlCarousel({
+  var owlYoutube = $(".youtube-slider");
+   owlYoutube.owlCarousel({
      items:1,
      loop:false,
      center:true,
@@ -79,8 +95,8 @@ $(function() {
 
 //Меню для youtube блока
 
-  var owl = $(".youtube-menu");
-   owl.owlCarousel({
+  var owlYoutubeNav = $(".youtube-menu");
+   owlYoutubeNav.owlCarousel({
     loop: false,
     items: 4,
     itemClass: "youtube-menu-slide-wrap",
