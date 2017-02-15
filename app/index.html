@@ -223,12 +223,12 @@
 		<section class="calendar-of-events">
 			<span class="section-header">Календарь событий</span>
 				<div class="row">
-					<div class="col-md-7">
+					<div class="col-md-7 col-sm-7 col-xs-12">
 						<div class="events-date-menu">
 							<ul>
 								<li><a href="#" class="active">Сегодня</a></li>
 								<li><a href="#">Завтра</a></li>
-								<li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>Выбрать дату</a></li>
+								<li class="events-menu-calendar"><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>Выбрать дату</a></li>
 							</ul>
 						</div>
 						<div class="events-theme-tabs">
@@ -246,63 +246,72 @@
 						        <div class="event-section">
 						        	<div class="event-item">
 												<div class="row">
-													<div class="col-md-5">
+													<div class="col-md-5 col-sm-5 col-xs-6">
 														<div class="event-item-img">
 															<img src="img/article_img_md_1.jpg" alt="Грани будущего">
 														</div>
 													</div>
-													<div class="col-md-7">
-														<h3>Название события в несколько строк</h3>
-														<p>Место проведения данного события и Место проведения данного события</p>
-														<a href="#" class="button">Подробнее</a>
-												</div>
+													<div class="col-md-7 col-sm-7 col-xs-6">
+														<div class="event-item-txt">
+															<h3>Название события в несколько строк</h3>
+															<p>Место проведения данного события и Место проведения данного события. Место проведения.</p>
+															<a href="#" class="button">Подробнее</a>
+															<div class="clearfix"></div>
+														</div>
+													</div>
 												</div>
 											</div>
 											<div class="event-item">
 												<div class="row">
-													<div class="col-md-5">
+													<div class="col-md-5 col-sm-5 col-xs-6">
 														<div class="event-item-img">
 															<img src="img/article_img_md_2.jpg" alt="Какой-то фильм">
 														</div>
 													</div>
-													<div class="col-md-7">
-														<h3>Название события в несколько строк</h3>
-														<p>Место проведения данного события и Место проведения данного события</p>
-														<p class="event-date">25.12.2016 <span>в</span> 12:00</p>
-														<p class="event-price">Бесплатный вход</p>
-														<a href="#" class="button">Подробнее</a>
+													<div class="col-md-7 col-sm-7 col-xs-6">
+														<div class="event-item-txt">
+															<h3>Название события в несколько строк</h3>
+															<p>Место проведения данного события и Место проведения данного события</p>
+															<p class="event-date">25.12.2016 <span>в</span> 12:00</p>
+															<p class="event-price">Бесплатный вход</p>
+															<a href="#" class="button">Подробнее</a>
+														</div>
 												</div>
 												</div>
 											</div>
 											<div class="event-item">
 												<div class="row">
-													<div class="col-md-5">
+													<div class="col-md-5 col-sm-5 col-xs-6">
 														<div class="event-item-img">
 															<img src="img/article_img_md_3.jpg" alt="Исходный код">
 														</div>
 													</div>
-													<div class="col-md-7">
-														<h3>Название события в несколько строк</h3>
-														<p>Место проведения данного события и Место проведения данного события</p>
-														<p class="event-date">25.12.2016 <span>в</span> 12:00</p>
-														<p class="event-price">2600 тг</p>
-														<a href="#" class="button">Подробнее</a>
+													<div class="col-md-7 col-sm-7 col-xs-6">
+														<div class="event-item-txt">
+															<h3>Название события в несколько строк</h3>
+															<p>Место проведения данного события и Место проведения данного события</p>
+															<p class="event-date">25.12.2016 <span>в</span> 12:00</p>
+															<p class="event-price">2600 тг</p>
+															<a href="#" class="button">Подробнее</a>
+														</div>
 												</div>
 												</div>
 											</div>
 											<div class="event-item">
 												<div class="row">
-													<div class="col-md-5">
+													<div class="col-md-5 col-sm-5 col-xs-6">
 														<div class="event-item-img">
 															<img src="img/article_img_md_4.jpg" alt="Аватар">
 														</div>
 													</div>
-													<div class="col-md-7">
-														<h3>Название события в несколько строк</h3>
-														<p>Место проведения данного события и Место проведения данного события</p>
-														<p class="event-date">25.12.2016 <span>в</span> 12:00</p>
-														<p class="event-price">2600 тг</p>
-														<a href="#" class="button">Подробнее</a>
+													<div class="col-md-7 col-sm-7 col-xs-6">
+														<div class="event-item-txt">
+															<h3>Название события в несколько строк</h3>
+															<p>Место проведения данного события и Место проведения данного события</p>
+															<p class="event-date">25.12.2016 <span>в</span> 12:00</p>
+															<p class="event-price">2600 тг</p>
+															<a href="#" class="button">Подробнее</a>
+														</div>
 												</div>
 												</div>
 											</div>
@@ -317,7 +326,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-1">
+					<div class="col-md-1 col-sm-1 hidden-xs">
 						<div class="social-buttons">
 							<ul>
 								<li>
@@ -338,19 +347,27 @@
 							</ul>
 						</div>
 					</div>
-					<div class="col-md-4">
+					<div class="col-md-4 col-sm-4 col-xs-12">
 						<div class="side-banners-box">
-							<div class="side-banner">
-								<img src="img/side_banner_img_1.jpg" alt="Варкрафт">
-								<a href="#"><span>Смотреть</span></a>
-							</div>
-							<div class="side-banner">
-								<img src="img/side_banner_img_2.jpg" alt="Хроники Риддика">
-								<a href="#"><span>Смотреть</span></a>
-							</div>
-							<div class="side-banner">
-								<img src="img/side_banner_img_3.jpg" alt="Олдбой">
-								<a href="#"><span>Смотреть</span></a>
+							<div class="row">
+								<div class="col-md-12 col-sm-12 col-xs-4">
+									<div class="side-banner">
+										<img src="img/side_banner_img_1.jpg" alt="Варкрафт">
+										<a href="#"><span>Смотреть</span></a>
+									</div>
+								</div>
+								<div class="col-md-12 col-sm-12 col-xs-4">
+									<div class="side-banner">
+										<img src="img/side_banner_img_2.jpg" alt="Хроники Риддика">
+										<a href="#"><span>Смотреть</span></a>
+									</div>
+								</div>
+								<div class="col-md-12 col-sm-12 col-xs-4">
+									<div class="side-banner">
+										<img src="img/side_banner_img_3.jpg" alt="Олдбой">
+										<a href="#"><span>Смотреть</span></a>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>

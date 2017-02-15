@@ -61,6 +61,8 @@
 
   .articles-box
     padding-top: 30px
+    .article-preview-small
+      margin-bottom: 20px
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
@@ -90,13 +92,58 @@
     &:first-child
       left: 0
 
+
+
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
+  .top-panel
+    .search-field
+      width: 45px
+      input
+        display: none
+  .event-section
+    margin-right: -15px
+    margin-left: -15px
+    .event-item-txt
+      padding-bottom: 55px
+      position: relative
+      margin-left: -15px
+      a
+        position: absolute
+        right: 50%
+        bottom: 0
+      .event-price
+        margin-left: -135px
+        text-align: center
+        font-size: em(18px)
+        margin-top: 20px
 
-  .search-field
-    input
-      display: none
+  .calendar-of-events
+    .events-date-menu
+      text-align: center
+      li:first-child, li:nth-child(2)
+        width: 48%
+        margin-right: 0
+        margin-left: 0
+      li:first-child
+        float: left
+      li:nth-child(2)
+        float: right
+      .events-menu-calendar
+        width: 100%
+        margin-top: 12px
 
+  .events-theme-tabs
+    .tabs-wrapper
+      .tabs
+        margin-right: -15px
+        margin-left: -15px
+
+  .all-events-btn
+    display: block
+    width: 144px
+    margin: 15px auto 0
+    float: none
 
 
 /*==========  Mobile First  ==========*/

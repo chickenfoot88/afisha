@@ -94,7 +94,6 @@ $(function() {
   });
 
 //Меню для youtube блока
-
   var owlYoutubeNav = $(".youtube-menu");
    owlYoutubeNav.owlCarousel({
     loop: false,
@@ -103,6 +102,10 @@ $(function() {
     navText: "",
     rewind: true
   });
+
+  $(".youtube-menu-slide").find("a").click(function(event) {
+    return false
+  })
 
 // Табы
 
@@ -119,7 +122,7 @@ $(function() {
   }).eq(0).addClass("active");
 
   //Табы в видеоблоге
-  $(".vlog .tab").click(function() {
+  $(".vlog .tab").click(function(event) {
     $(".vlog .tab").removeClass("active").eq($(this).index()).addClass("active");
     $(".vlog .vlog-section").hide().eq($(this).index()).fadeIn();
   }).eq(0).addClass("active");
@@ -144,6 +147,7 @@ $(function() {
     }
   });
 
+
   //Ссылки на статьи в проевьюшках
 
   $(".article-item").click(function(){
@@ -151,5 +155,30 @@ $(function() {
    });
 
 
+  //Прилипающие кнопки соц.сетей
+
+  $(".social-buttons").parent().stick_in_parent()
+    .on("sticky_kit:bottom", function(e) {$(this).parent().css("position","static");})
+    .on("sticky_kit:unbottom", function(e) {$(this).parent().css("position", "relative")});
+
+
+  //Смена сетки для бокового блока на 320px
+
+  $(window).resize(function() {
+    var ww = $(".wrapper").width();
+
+    var col4 = $(".side-banners-box").find(".col-xs-4");
+    var col12 = $(".side-banners-box").find(".col-xs-12");
+    if (ww < 320) {
+      col4.removeClass("col-xs-4").addClass("col-xs-12");
+    } else {
+      col12.removeClass("col-xs-12").addClass("col-xs-4");
+    }
+
+  });
+
+  if($(".wrapper").width() < 320) {
+    $(".side-banners-box").find(".col-xs-4").removeClass("col-xs-4").addClass("col-xs-12");
+  };
 
 });
