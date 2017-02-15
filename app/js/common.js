@@ -162,23 +162,36 @@ $(function() {
     .on("sticky_kit:unbottom", function(e) {$(this).parent().css("position", "relative")});
 
 
-  //Смена сетки для бокового блока на 320px
+  //Смена сетки для блоков на 320px
 
   $(window).resize(function() {
     var ww = $(".wrapper").width();
 
-    var col4 = $(".side-banners-box").find(".col-xs-4");
-    var col12 = $(".side-banners-box").find(".col-xs-12");
+    var colXs4 = $(".side-banners-box").find(".col-xs-4");
+    var colXs12 = $(".side-banners-box").find(".col-xs-12");
+    var colSm4 = $(".article-item").find(".col-sm-4");
+    var colSm8 = $(".article-item").find(".col-sm-8");
     if (ww < 320) {
-      col4.removeClass("col-xs-4").addClass("col-xs-12");
+      colXs4.removeClass("col-xs-4").addClass("col-xs-12");
+      colSm4.removeClass("col-xs-4").addClass("col-xs-6");
+      colSm8.removeClass("col-xs-8").addClass("col-xs-6");
     } else {
-      col12.removeClass("col-xs-12").addClass("col-xs-4");
+      colXs12.removeClass("col-xs-12").addClass("col-xs-4");
+      colSm4.removeClass("col-xs-6").addClass("col-xs-4");
+      colSm8.removeClass("col-xs-6").addClass("col-xs-8");
     }
+
 
   });
 
   if($(".wrapper").width() < 320) {
+
     $(".side-banners-box").find(".col-xs-4").removeClass("col-xs-4").addClass("col-xs-12");
-  };
+    $(".article-item").find(".col-sm-4").removeClass("col-xs-4").addClass("col-xs-6");
+
+      } else if ($(".wrapper").width() > 320 && $(".wrapper").width() < 768) {
+        $(".article-item").find(".col-sm-4").removeClass("col-xs-6").addClass("col-xs-4");
+        $(".article-item").find(".col-sm-8").removeClass("col-xs-6").addClass("col-xs-8");
+      }
 
 });
