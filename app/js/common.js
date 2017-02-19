@@ -84,8 +84,7 @@ $(function() {
      margin:10,
      itemClass: "youtube-slide-wrap",
      URLhashListener:true,
-     autoplayHoverPause:true,
-     startPosition: 'URLHash',
+     startPosition: 'zero',
      animateIn: 'fadeIn',
      animateOut: 'fadeOut',
      mouseDrag: false,
@@ -99,50 +98,87 @@ $(function() {
     loop: false,
     items: 4,
     itemClass: "youtube-menu-slide-wrap",
-    navText: "",
     rewind: true
   });
 
-  $(".youtube-menu-slide").find("a").click(function(event) {
-    return false
-  })
+  var youtubeSliderNav = $(".slider-nav-container");
+
+   youtubeSliderNav.find(".next").click(function() {
+     owlYoutubeNav.trigger('next.owl.carousel');
+   })
+   youtubeSliderNav.find(".prev").click(function() {
+     owlYoutubeNav.trigger('prev.owl.carousel');
+   });
+
+  // $(".youtube-menu-slide").find("a").click(function(event) {
+  //   return false
+  // })
 
 // Табы
 
   // Табы в календаре событий
-  $(".calendar-of-events .tab").click(function() {
-  	$(".calendar-of-events .tab").removeClass("active").eq($(this).index()).addClass("active");
-  	$(".calendar-of-events .event-section").hide().eq($(this).index()).fadeIn();
-  }).eq(0).addClass("active");
+
+  var owlEventsTabs = $('.calendar-of-events .tabs');
+  owlEventsTabs.owlCarousel({
+      margin: 0,
+      responsiveClass: true,
+      stageElement: "ul",
+      itemElement: "li",
+      items: 5,
+      URLhashListener:true,
+      startPosition: 'cinema',
+      responsive:{
+          0:{
+              items:1,
+              nav:true
+          },
+          600:{
+              items:3,
+              nav:false
+          },
+          1000:{
+              items:5,
+              nav:true
+          }
+      }
+  });
+  owlEventsTabs.on('change.owl.carousel', function(event) {
+    console.log($(".calendar-of-events .owl-item"));
+    $(".calendar-of-events .owl-item").click(function() {
+      console.log(1);
+      $(this).removeClass("active-tab").eq($(this).index()).addClass("active-tab");
+      $(".calendar-of-events .event-section").hide().eq($(this).index()).fadeIn();
+    }).eq(0).addClass("active-tab");
+  });
 
   // Табы в городской хронике
   $(".city-сhronicle .tab").click(function() {
-  	$(".city-сhronicle .tab").removeClass("active").eq($(this).index()).addClass("active");
+  	$(".city-сhronicle .tab").removeClass("active-tab").eq($(this).index()).addClass("active-tab");
   	$(".city-сhronicle .article-section").hide().eq($(this).index()).fadeIn();
-  }).eq(0).addClass("active");
+  }).eq(0).addClass("active-tab");
 
   //Табы в видеоблоге
   $(".vlog .tab").click(function(event) {
-    $(".vlog .tab").removeClass("active").eq($(this).index()).addClass("active");
+    $(".vlog .tab").removeClass("active-tab").eq($(this).index()).addClass("active-tab");
     $(".vlog .vlog-section").hide().eq($(this).index()).fadeIn();
-  }).eq(0).addClass("active");
+  }).eq(0).addClass("active-tab");
 
 
     // Убираем бордер у таба при переключении
   $(".tabs-wrapper .tab").click(function() {
     $(this).prev().children().addClass("br-none");
-    $(".tabs-wrapper .tab.active").prev().siblings().children().removeClass("br-none");
+    $(".tabs-wrapper .tab.active-tab").prev().siblings().children().removeClass("br-none");
   });
 
   //Убираем бордер при ховере таб (кроме активного)
   $(".tabs-wrapper .tab").mouseover(function functionName() {
-    if (!($(this).hasClass("active"))) {
+    if (!($(this).hasClass("active-tab"))) {
       $(this).prev().children().addClass("br-none");
     }
   });
 
   $(".tabs-wrapper .tab").mouseout(function() {
-    if (!($(this).hasClass("active"))) {
+    if (!($(this).hasClass("active-tab"))) {
       $(this).prev().children().removeClass("br-none");
     }
   });

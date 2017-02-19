@@ -233,17 +233,17 @@
 						</div>
 						<div class="events-theme-tabs">
 							<div class="tabs-wrapper">
-						    <div class="tabs">
-									<ul>
-										<li class="tab"><span>Театр</span></li>
-										<li class="tab"><span>Музыка</span></li>
-										<li class="tab"><span>Вставки</span></li>
-										<li class="tab"><span>Город</span></li>
-										<li class="tab"><span>Тренинги</span></li>
-									</ul>
+						    <div class="tabs owl-carousel">
+
+										<a href="#theatre" class="tab-name"><span >Театр</span></a>
+										<a href="#music" class="tab-name"><span class="tab-name">Музыка</span></a>
+										<a href="" class="tab-name"><span class="tab-name">Вставки</span></a>
+										<a href="" class="tab-name"><span class="tab-name">Город</span></a>
+										<a href="" class="tab-name"><span class="tab-name">Тренинги</span></a>
+
 						    </div>
 						    <div class="tab-content">
-						        <div class="event-section">
+						        <div class="event-section" data-hash="theatre">
 						        	<div class="event-item">
 												<div class="row">
 													<div class="col-md-5 col-sm-5 col-xs-6">
@@ -318,7 +318,7 @@
 											<a href="#" class="all-events-btn button">Все события</a>
 											<div class="clearfix"></div>
 						        </div>
-						        <div class="event-section">Музыка 2</div>
+						        <div class="event-section" data-hash="music">Музыка 2</div>
 						        <div class="event-section">Вставки 3</div>
 										<div class="event-section">Город 3</div>
 										<div class="event-section">Тренинги 3</div>
@@ -473,8 +473,11 @@
 		<section class="vlog">
 			<div class="row">
 				<div class="col-md-12">
+
 					<div class="section-header">Видеоблог</div>
-					<div class="tabs-wrapper">
+
+							<div class="tabs-wrapper">
+
 							<div class="tabs">
 								<ul>
 									<li class="tab"><span>Культура</span></li>
@@ -482,17 +485,19 @@
 									<li class="tab"><span>Город</span></li>
 								</ul>
 							</div>
+
 							<div class="tab-content">
-									<div class="vlog-section">
-										<div class="vlog-section-left">
-											<div class="vlog-item">
-												<div class="youtube-slider">
-													<div class="youtube-frame" data-hash="zero">
-														<iframe width="640" height="320" src="https://www.youtube.com/embed/Ypa3_P7msbo" frameborder="0" allowfullscreen></iframe>
-													</div>
-													<div class="youtube-frame" data-hash="one">
-														<iframe width="640" height="320" src="https://www.youtube.com/embed/xSlxXbiB7dg" frameborder="0" allowfullscreen></iframe>
-													</div>
+
+								<div class="vlog-section">
+
+												<div class="vlog-item">
+													<div class="youtube-slider">
+														<div class="youtube-frame" data-hash="zero">
+															<iframe src="https://www.youtube.com/embed/Ypa3_P7msbo" frameborder="0" allowfullscreen></iframe>
+														</div>
+														<div class="youtube-frame" data-hash="one">
+															<iframe width="640" height="320" src="https://www.youtube.com/embed/xSlxXbiB7dg" frameborder="0" allowfullscreen></iframe>
+														</div>
 													</div>
 												</div>
 												<div class="slider-nav-container">
@@ -536,14 +541,16 @@
 														<a href="#zero"></a>
 													</div>
 													</div>
-											</div>
+
+												<div class="clearfix"></div>
+
 										</div>
-										<div class="clearfix"></div>
-									</div>
-									<div class="article-section">Кино</div>
-									<div class="article-section">Обучение</div>
+
 							</div>
+							<div class="article-section">Кино</div>
+							<div class="article-section">Обучение</div>
 						</div>
+
 				</div>
 			</div>
 		</section>

@@ -24,6 +24,11 @@
         padding: 5px 10px
         font-size: em(14px)
 
+  // .vlog
+  //   .youtube-slide-wrap
+  //     .youtube-frame
+  //       height: 440px
+
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
 
@@ -70,6 +75,15 @@
       .article-big-preview
         height: 400px
 
+  .vlog
+    .slider-nav-container
+      .slider-nav
+        div
+          &.prev
+            margin-left: -50px
+          &.next
+            margin-right: -50px
+
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
 
@@ -91,19 +105,16 @@
       .slide
         height: 240px
 
-  .slider-nav div
-    top: 100px
-    &:last-child
-      right: 0
-    &:first-child
-      left: 0
   .city-сhronicle
     .article-section-right
       .article-big-preview
         height: 300px
         img
           height: 100%
-
+  // .vlog
+  //   .youtube-slide-wrap
+  //   	.youtube-frame
+  //       height: 280px
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
@@ -129,6 +140,10 @@
         text-align: center
         font-size: em(18px)
         margin-top: 20px
+
+  .main-slider-nav-container
+    .slider-nav
+      padding: 0
 
   .calendar-of-events
     .events-date-menu
@@ -164,6 +179,8 @@
     .article-section-right
       .article-big-preview
         height: 270px
+
+
 
 /*==========  Mobile First  ==========*/
 
