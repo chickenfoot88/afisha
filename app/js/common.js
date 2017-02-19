@@ -125,59 +125,145 @@ $(function() {
       stageElement: "ul",
       itemElement: "li",
       items: 5,
-      URLhashListener:true,
-      startPosition: 'cinema',
+      smartSpeed: 500,
       responsive:{
-          0:{
-              items:1,
+          320:{
+              items:2,
               nav:true
           },
-          600:{
-              items:3,
-              nav:false
-          },
-          1000:{
+          479:{
               items:5,
               nav:true
           }
-      }
-  });
-  owlEventsTabs.on('change.owl.carousel', function(event) {
-    console.log($(".calendar-of-events .owl-item"));
-    $(".calendar-of-events .owl-item").click(function() {
-      console.log(1);
-      $(this).removeClass("active-tab").eq($(this).index()).addClass("active-tab");
-      $(".calendar-of-events .event-section").hide().eq($(this).index()).fadeIn();
-    }).eq(0).addClass("active-tab");
+      },
+      navText: ""
   });
 
+  //Кнопки навигации в табах календаря событий
+  var owlEventsTabsNav = $(".events-tabs-nav-container");
+
+  if(owlEventsTabs.find(".owl-item:first-child").hasClass("active")) {
+    owlEventsTabsNav.find(".prev").hide();
+  };
+
+   owlEventsTabsNav.find(".next").click(function() {
+
+     owlEventsTabs.trigger('next.owl.carousel');
+     owlEventsTabsNav.find(".prev").show();
+
+     if(owlEventsTabs.find(".owl-item:last-child").hasClass("active")) {
+       owlEventsTabsNav.find(".next").hide();
+     };
+
+      ;
+
+   });
+
+   owlEventsTabsNav.find(".prev").click(function() {
+
+     owlEventsTabs.trigger('prev.owl.carousel');
+     owlEventsTabsNav.find(".next").show();
+
+     if(owlEventsTabs.find(".owl-item:first-child").hasClass("active")) {
+       owlEventsTabsNav.find(".prev").hide();
+     };
+
+   });
+
+   // Табы в городских хрониках
+   var owlChronicleTabs = $('.city-сhronicle .tabs');
+   owlChronicleTabs.owlCarousel({
+       margin: 0,
+       responsiveClass: true,
+       stageElement: "ul",
+       itemElement: "li",
+       items: 7,
+       smartSpeed: 500,
+       responsive:{
+           320:{
+               items:2,
+               nav:true
+           },
+           479:{
+               items:5,
+               nav:true
+           },
+           768:{
+               items:7,
+               nav:false
+           }
+       },
+       navText: ""
+   });
+
+   //Кнопки навигации в табах городских хрониках
+   var owlChroncileTabsNav = $(".chronicle-tabs-nav-container");
+
+   if(owlChronicleTabs.find(".owl-item:first-child").hasClass("active")) {
+     owlChroncileTabsNav.find(".prev").hide();
+   };
+
+    owlChroncileTabsNav.find(".next").click(function() {
+
+      owlChronicleTabs.trigger('next.owl.carousel');
+      owlChroncileTabsNav.find(".prev").show();
+
+      if(owlChronicleTabs.find(".owl-item:last-child").hasClass("active")) {
+        owlChroncileTabsNav.find(".next").hide();
+      };
+
+       ;
+
+    });
+
+    owlChroncileTabsNav.find(".prev").click(function() {
+
+      owlChronicleTabs.trigger('prev.owl.carousel');
+      owlChroncileTabsNav.find(".next").show();
+
+      if(owlChronicleTabs.find(".owl-item:first-child").hasClass("active")) {
+        owlChroncileTabsNav.find(".prev").hide();
+      };
+
+    });
+
+
+
+
+  $(".calendar-of-events .owl-item").click(function() {
+    $(".calendar-of-events .owl-item").removeClass("active-tab").eq($(this).index()).addClass("active-tab");
+    $(".calendar-of-events .event-section").hide().eq($(this).index()).show();
+  }).eq(0).addClass("active-tab");
+
+
   // Табы в городской хронике
-  $(".city-сhronicle .tab").click(function() {
-  	$(".city-сhronicle .tab").removeClass("active-tab").eq($(this).index()).addClass("active-tab");
-  	$(".city-сhronicle .article-section").hide().eq($(this).index()).fadeIn();
+  $(".city-сhronicle .owl-item").click(function() {
+  	$(".city-сhronicle .owl-item").removeClass("active-tab").eq($(this).index()).addClass("active-tab");
+  	$(".city-сhronicle .article-section").hide().eq($(this).index()).show();
   }).eq(0).addClass("active-tab");
 
   //Табы в видеоблоге
   $(".vlog .tab").click(function(event) {
     $(".vlog .tab").removeClass("active-tab").eq($(this).index()).addClass("active-tab");
-    $(".vlog .vlog-section").hide().eq($(this).index()).fadeIn();
+    $(".vlog .vlog-section").hide().eq($(this).index()).show();
   }).eq(0).addClass("active-tab");
 
 
     // Убираем бордер у таба при переключении
-  $(".tabs-wrapper .tab").click(function() {
+  $(".tabs-wrapper .owl-item").click(function() {
     $(this).prev().children().addClass("br-none");
-    $(".tabs-wrapper .tab.active-tab").prev().siblings().children().removeClass("br-none");
+    $(".tabs-wrapper .owl-item.active-tab").prev().siblings().children().removeClass("br-none");
   });
 
   //Убираем бордер при ховере таб (кроме активного)
-  $(".tabs-wrapper .tab").mouseover(function functionName() {
+  $(".tabs-wrapper .owl-item").mouseover(function functionName() {
     if (!($(this).hasClass("active-tab"))) {
       $(this).prev().children().addClass("br-none");
     }
   });
 
-  $(".tabs-wrapper .tab").mouseout(function() {
+  //Убираем бордер при ховере таб (у активного)
+  $(".tabs-wrapper .owl-item").mouseout(function() {
     if (!($(this).hasClass("active-tab"))) {
       $(this).prev().children().removeClass("br-none");
     }

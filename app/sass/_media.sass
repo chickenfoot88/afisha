@@ -24,11 +24,6 @@
         padding: 5px 10px
         font-size: em(14px)
 
-  // .vlog
-  //   .youtube-slide-wrap
-  //     .youtube-frame
-  //       height: 440px
-
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
 
@@ -84,6 +79,14 @@
           &.next
             margin-right: -50px
 
+  .tabs-wrapper
+    .owl-item
+      &:nth-child(3)
+        border-right: none !important
+
+  .chronicle-tabs-nav-container
+    display: block
+
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
 
@@ -115,6 +118,7 @@
   //   .youtube-slide-wrap
   //   	.youtube-frame
   //       height: 280px
+
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
@@ -162,8 +166,21 @@
 
   .tabs-wrapper
     .tabs
-      margin-right: -15px
+      width: 320px
       margin-left: -15px
+      ul
+        li.active
+          span
+            padding-left: 40px
+          &+li.active
+            span
+              padding-right: 40px
+              padding-left: 0
+        li:first-child,
+        li:last-child
+          span
+            padding-left: 0 !important
+            padding-right: 0 !important
 
   .all-events-btn
     display: block
@@ -180,6 +197,8 @@
       .article-big-preview
         height: 270px
 
+  .events-tabs-nav-container
+    display: block
 
 
 /*==========  Mobile First  ==========*/

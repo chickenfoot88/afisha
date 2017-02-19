@@ -258,30 +258,40 @@ h3, h4, h5, h6
 	.slider-wrap
 		position: relative
 
-.main-slider-nav-container
-	.slider-nav
-		color: #fff
-		font-size: 36px
-		padding: 0 15px
-		margin-top: -20px
-		position: absolute
-		top: 50%
-		width: 100%
-		z-index: 1
-		div
-			background-color: $accent-color
-			cursor: pointer
-			height: 40px
-			line-height: 0
-			padding-top: 1px
-			text-align: center
-			top: 23px
-			width: 40px
-			&.prev
-				float: left
-			&.next
-				float: right
+//Кнопки навигации в слайд-шоу и табах (общие стили)
+.slider-nav
+	color: #fff
+	font-size: 36px
+	padding: 0 15px
+	margin-top: -20px
+	position: absolute
+	top: 50%
+	width: 100%
+	z-index: 1
+	height: 0
+	div
+		background-color: $accent-color
+		cursor: pointer
+		height: 40px
+		line-height: 0
+		padding-top: 1px
+		text-align: center
+		top: 23px
+		width: 40px
+		&.prev
+			float: left
+		&.next
+			float: right
 
+
+.events-tabs-nav-container,
+.chronicle-tabs-nav-container
+	display: none
+	position: relative
+	.slider-nav
+		padding: 0
+		top: 32px
+		z-index: 2
 
 //Кнопка переключения меню
 .toggle-menu-spans
@@ -454,7 +464,8 @@ h3, h4, h5, h6
 		background-color: $main-color
 	.tabs
 		ul
-			li.tab, li.owl-item
+			li.tab,
+			li.owl-item
 				font-weight: bold
 				cursor: pointer
 				text-transform: uppercase
