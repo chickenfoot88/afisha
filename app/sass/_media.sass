@@ -24,6 +24,11 @@
         padding: 5px 10px
         font-size: em(14px)
 
+  footer
+    .vk-frame
+      margin-left: 15px
+
+
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
 
@@ -73,11 +78,12 @@
   .vlog
     .slider-nav-container
       .slider-nav
+        top: 28px
         div
           &.prev
-            margin-left: -50px
+            margin-left: -30px
           &.next
-            margin-right: -50px
+            margin-right: -30px
 
   .tabs-wrapper
     .owl-item
@@ -86,6 +92,36 @@
 
   .chronicle-tabs-nav-container
     display: block
+
+  .vlog-tabs-nav-container
+    .slider-nav
+      display: none
+      
+  footer
+    .sign-up-header
+      margin-bottom: 20px
+    .footer-social-frames
+      margin: 0 auto
+      .facebook-frame,
+      .vk-frame
+        margin: 0
+        float: none
+        iframe
+          margin: 0 auto
+          display: block
+      .facebook-frame
+        margin-bottom: 20px
+    .footer-feedback-rules a
+      display: block
+    // .footer-links,
+    // .footer-phones,
+    // .footer-mail
+    //   float: none
+    .bitrix-btn
+      float: none
+      margin-right: auto
+      margin-left: auto
+
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
@@ -114,11 +150,17 @@
         height: 300px
         img
           height: 100%
-  // .vlog
-  //   .youtube-slide-wrap
-  //   	.youtube-frame
-  //       height: 280px
+  .vlog
+    .youtube-slide-wrap
+    	.youtube-frame
+        height: 280px
+    .slider-nav-container
+      .slider-nav
+        top: 38px
 
+  .main-slider-nav-container
+    .slider-nav
+      top: 105px
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
@@ -128,7 +170,8 @@
       input
         display: none
   .event-section,
-  .article-section
+  .article-section,
+  .vlog-section
     margin-right: -15px
     margin-left: -15px
     .event-item-txt
@@ -200,6 +243,18 @@
   .events-tabs-nav-container
     display: block
 
+  .vlog
+    .youtube-slide-wrap
+    	.youtube-frame
+        height: 160px
+    .slider-nav-container
+      .slider-nav
+        top: 20px
+
+  footer
+    input,
+    button
+      width: 100%
 
 /*==========  Mobile First  ==========*/
 

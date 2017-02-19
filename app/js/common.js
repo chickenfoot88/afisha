@@ -98,7 +98,19 @@ $(function() {
     loop: false,
     items: 4,
     itemClass: "youtube-menu-slide-wrap",
-    rewind: true
+    rewind: true,
+    navText:"",
+    responsive:{
+        320:{
+            items:2
+        },
+        479:{
+            items:2
+        },
+        767:{
+            items:4
+        }
+    }
   });
 
   var youtubeSliderNav = $(".slider-nav-container");
@@ -110,14 +122,9 @@ $(function() {
      owlYoutubeNav.trigger('prev.owl.carousel');
    });
 
-  // $(".youtube-menu-slide").find("a").click(function(event) {
-  //   return false
-  // })
-
 // Табы
 
   // Табы в календаре событий
-
   var owlEventsTabs = $('.calendar-of-events .tabs');
   owlEventsTabs.owlCarousel({
       margin: 0,
@@ -126,6 +133,7 @@ $(function() {
       itemElement: "li",
       items: 5,
       smartSpeed: 500,
+      mouseDrag: false,
       responsive:{
           320:{
               items:2,
@@ -146,29 +154,27 @@ $(function() {
     owlEventsTabsNav.find(".prev").hide();
   };
 
-   owlEventsTabsNav.find(".next").click(function() {
+  owlEventsTabsNav.find(".next").click(function() {
 
-     owlEventsTabs.trigger('next.owl.carousel');
-     owlEventsTabsNav.find(".prev").show();
+    owlEventsTabs.trigger('next.owl.carousel');
+    owlEventsTabsNav.find(".prev").show();
 
-     if(owlEventsTabs.find(".owl-item:last-child").hasClass("active")) {
-       owlEventsTabsNav.find(".next").hide();
-     };
+    if(owlEventsTabs.find(".owl-item:last-child").hasClass("active")) {
+      owlEventsTabsNav.find(".next").hide();
+    };
 
-      ;
+  });
 
-   });
+  owlEventsTabsNav.find(".prev").click(function() {
 
-   owlEventsTabsNav.find(".prev").click(function() {
+   owlEventsTabs.trigger('prev.owl.carousel');
+   owlEventsTabsNav.find(".next").show();
 
-     owlEventsTabs.trigger('prev.owl.carousel');
-     owlEventsTabsNav.find(".next").show();
+   if(owlEventsTabs.find(".owl-item:first-child").hasClass("active")) {
+     owlEventsTabsNav.find(".prev").hide();
+   };
 
-     if(owlEventsTabs.find(".owl-item:first-child").hasClass("active")) {
-       owlEventsTabsNav.find(".prev").hide();
-     };
-
-   });
+  });
 
    // Табы в городских хрониках
    var owlChronicleTabs = $('.city-сhronicle .tabs');
@@ -179,13 +185,14 @@ $(function() {
        itemElement: "li",
        items: 7,
        smartSpeed: 500,
+       mouseDrag: false,
        responsive:{
            320:{
                items:2,
                nav:true
            },
            479:{
-               items:5,
+               items:4,
                nav:true
            },
            768:{
@@ -197,37 +204,89 @@ $(function() {
    });
 
    //Кнопки навигации в табах городских хрониках
-   var owlChroncileTabsNav = $(".chronicle-tabs-nav-container");
+   var owlChronicleTabsNav = $(".chronicle-tabs-nav-container");
 
    if(owlChronicleTabs.find(".owl-item:first-child").hasClass("active")) {
-     owlChroncileTabsNav.find(".prev").hide();
+     owlChronicleTabsNav.find(".prev").hide();
    };
 
-    owlChroncileTabsNav.find(".next").click(function() {
+   owlChronicleTabsNav.find(".next").click(function() {
 
-      owlChronicleTabs.trigger('next.owl.carousel');
-      owlChroncileTabsNav.find(".prev").show();
+     owlChronicleTabs.trigger('next.owl.carousel');
+     owlChronicleTabsNav.find(".prev").show();
 
-      if(owlChronicleTabs.find(".owl-item:last-child").hasClass("active")) {
-        owlChroncileTabsNav.find(".next").hide();
-      };
+     if(owlChronicleTabs.find(".owl-item:last-child").hasClass("active")) {
+       owlChronicleTabsNav.find(".next").hide();
+     };
 
-       ;
+   });
 
-    });
+   owlChronicleTabsNav.find(".prev").click(function() {
 
-    owlChroncileTabsNav.find(".prev").click(function() {
+    owlChronicleTabs.trigger('prev.owl.carousel');
+    owlChronicleTabsNav.find(".next").show();
 
-      owlChronicleTabs.trigger('prev.owl.carousel');
-      owlChroncileTabsNav.find(".next").show();
+    if(owlChronicleTabs.find(".owl-item:first-child").hasClass("active")) {
+      owlChronicleTabsNav.find(".prev").hide();
+    };
 
-      if(owlChronicleTabs.find(".owl-item:first-child").hasClass("active")) {
-        owlChroncileTabsNav.find(".prev").hide();
-      };
+  });
 
-    });
+  // Табы в видеоблоге
+  var owlVlogTabs = $('.vlog .tabs');
+  owlVlogTabs.owlCarousel({
+      margin: 0,
+      responsiveClass: true,
+      stageElement: "ul",
+      itemElement: "li",
+      items: 3,
+      smartSpeed: 500,
+      mouseDrag: false,
+      responsive:{
+          320:{
+              items:2,
+              nav:true
+          },
+          479:{
+              items:5,
+              nav:true
+          },
+          768:{
+              items:7,
+              nav:false
+          }
+      },
+      navText: ""
+  });
 
+  //Кнопки навигации в табах видеоблога
+  var owlVlogTabsNav = $(".vlog-tabs-nav-container");
 
+  if(owlVlogTabs.find(".owl-item:first-child").hasClass("active")) {
+    owlVlogTabsNav.find(".prev").hide();
+  };
+
+   owlVlogTabsNav.find(".next").click(function() {
+
+     owlVlogTabs.trigger('next.owl.carousel');
+     owlVlogTabsNav.find(".prev").show();
+
+     if(owlVlogTabs.find(".owl-item:last-child").hasClass("active")) {
+       owlVlogTabsNav.find(".next").hide();
+     };
+
+   });
+
+   owlVlogTabsNav.find(".prev").click(function() {
+
+     owlVlogTabs.trigger('prev.owl.carousel');
+     owlVlogTabsNav.find(".next").show();
+
+     if(owlVlogTabs.find(".owl-item:first-child").hasClass("active")) {
+       owlVlogTabsNav.find(".prev").hide();
+     };
+
+   });
 
 
   $(".calendar-of-events .owl-item").click(function() {
@@ -243,8 +302,8 @@ $(function() {
   }).eq(0).addClass("active-tab");
 
   //Табы в видеоблоге
-  $(".vlog .tab").click(function(event) {
-    $(".vlog .tab").removeClass("active-tab").eq($(this).index()).addClass("active-tab");
+  $(".vlog .owl-item").click(function(event) {
+    $(".vlog .owl-item").removeClass("active-tab").eq($(this).index()).addClass("active-tab");
     $(".vlog .vlog-section").hide().eq($(this).index()).show();
   }).eq(0).addClass("active-tab");
 
